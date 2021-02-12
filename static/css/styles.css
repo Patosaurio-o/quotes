@@ -1,0 +1,62 @@
+* {
+  font-family: cursive;
+}
+body{
+  background-color: moccasin;
+}
+.blue {
+  color: blue;
+}
+.caja {
+  background-image: url(/static/img/fondoPag2estesiquesi.png);
+  background-repeat: repeat-y;
+  background-position: center;
+  background-size: 1100px;
+}
+.formulario {
+  background-image: url(/static/img/Pag1.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1000px;
+  padding-bottom: 20px;
+}
+.royoArriba {
+  background-image: url(/static/img/dobla3arriba.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1300px;
+  height: 270px;
+}
+.royoAbajo {
+  background-image: url(/static/img/dobla3abajo.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1350px;
+  height: 270px;
+}
+.icon{
+  height: 30px;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted black;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
