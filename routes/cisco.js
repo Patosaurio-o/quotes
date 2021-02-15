@@ -12,6 +12,9 @@ router.get('/quotes', async (req,res) => {
 });
 
 router.post('/quotes', async (req, res) => {
+  if(req.body.author==""||req.body.quotesText==""){
+    return res.send('fallo');
+  }
   const new_Quote = await Quote.create({
     author: req.body.author,
     quotesText: req.body.quotesText
@@ -22,7 +25,19 @@ router.post('/quotes', async (req, res) => {
 router.get('/delete/:id' , async (req,res) => {
   const delQuote = await Quote.findByPk(req.params.id);
   await delQuote.destroy();
-  res.redirect('quotes', {quotes:delQuote});
+  res.json({ estado: true,  mensaje: `la cita fue eliminada.`});
+});
+
+router.get('/update/:id' , async (req,res) => {
+  res.render('update');
+});
+
+router.post('/update/:id' , async (req,res) => {
+  const update = await Quote.findByPk(req.params.id);
+  update.author = req.body.author;
+  update.quotesText = req.body.quotesText;
+  await update.save();
+  res.render('update');
 });
 
 module.exports = router;
